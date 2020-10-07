@@ -1,0 +1,281 @@
+<?php $idpro2 = $this->replaceInsertTags('{{product::id}}');?>
+<?php if($this->idprodukt == $idpro2): ?>
+	<div class="comment_default<?= $this->class ?>" id="<?= $this->id ?>">
+	  <div class="head">
+		  <div class="sterne">
+		  	
+		  	
+
+		  	
+		  	<?php if ($this->sterne == 1): ?>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st1{fill:#CDB470;}
+					</style>
+					<polygon class="st1" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st2{fill:#ebe1c6;}
+					</style>
+					<polygon class="st2" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st2{fill:#ebe1c6;}
+					</style>
+					<polygon class="st2" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st2{fill:#ebe1c6;}
+					</style>
+					<polygon class="st2" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st2{fill:#ebe1c6;}
+					</style>
+					<polygon class="st2" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+		
+		<?php elseif ($this->sterne == 2): ?>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st1{fill:#CDB470;}
+					</style>
+					<polygon class="st1" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st1{fill:#CDB470;}
+					</style>
+					<polygon class="st1" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st2{fill:#ebe1c6;}
+					</style>
+					<polygon class="st2" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st2{fill:#ebe1c6;}
+					</style>
+					<polygon class="st2" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st2{fill:#ebe1c6;}
+					</style>
+					<polygon class="st2" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+
+		
+		<?php elseif ($this->sterne == 3): ?>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st1{fill:#CDB470;}
+					</style>
+					<polygon class="st1" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st1{fill:#CDB470;}
+					</style>
+					<polygon class="st1" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st1{fill:#CDB470;}
+					</style>
+					<polygon class="st1" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st2{fill:#ebe1c6;}
+					</style>
+					<polygon class="st2" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st2{fill:#ebe1c6;}
+					</style>
+					<polygon class="st2" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>			
+		
+		<?php elseif ($this->sterne == 4): ?>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st1{fill:#CDB470;}
+					</style>
+					<polygon class="st1" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st1{fill:#CDB470;}
+					</style>
+					<polygon class="st1" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st1{fill:#CDB470;}
+					</style>
+					<polygon class="st1" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st1{fill:#CDB470;}
+					</style>
+					<polygon class="st1" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st2{fill:#ebe1c6;}
+					</style>
+					<polygon class="st2" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+	
+
+		<?php elseif ($this->sterne == 5): ?>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st1{fill:#CDB470;}
+					</style>
+					<polygon class="st1" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st1{fill:#CDB470;}
+					</style>
+					<polygon class="st1" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st1{fill:#CDB470;}
+					</style>
+					<polygon class="st1" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st1{fill:#CDB470;}
+					</style>
+					<polygon class="st1" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+			<div class="stern-1">
+				<svg version="1.1" class="sta-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st1{fill:#CDB470;}
+					</style>
+					<polygon class="st1" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</div>
+		<?php endif; ?>
+		  	
+		  	
+		  	
+		  	</div>
+			
+			
+			
+		<div class="info"><time datetime="<?= $this->datetime ?>" class="date"><?= $this->date ?></time></div>
+	  </div>
+	  <div class="headline">
+	  	<h3><?= $this->headline ?></h3>
+	  </div>
+	  <div class="comment">
+	    <?= $this->comment ?>
+	  </div>
+	  <div class="info">
+	  	
+	  	<p class="info"><?php echo $this->nickname; ?></p>
+
+	  	
+	  </div>
+	
+	  <?php if ($this->addReply): ?>
+	    <div class="reply">
+	
+	      <p class="info"><?= $this->rby ?> <?= $this->author->name ?></p>
+	
+	      <div class="comment">
+	        <?= $this->reply ?>
+	      </div>
+	
+	    </div>
+	  <?php endif; ?>
+	</div>
+<?php endif; ?>

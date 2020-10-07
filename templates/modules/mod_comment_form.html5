@@ -1,0 +1,78 @@
+
+<!-- indexer::stop -->
+<div class="form">
+  <?php if ($this->requireLogin): ?>
+    <p class="info"><?= $this->login ?></p>
+  <?php else: ?>
+    <?php if ($this->confirm): ?>
+      <p class="tl_confirm"><?= $this->confirm ?></p>
+    <?php elseif ($this->allowComments): ?>
+      <form<?php if ($this->action): ?> action="<?= $this->action ?>"<?php endif; ?> id="<?= $this->formId ?>" method="post">
+        <div class="formbody">
+        	<input type="hidden" name="FORM_SUBMIT" value="<?= $this->formId ?>">
+        	<input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}">
+        	<div class="widget widget-radio">
+			<h3>Deine Gesamtbewertung:</h3>
+			<fieldset id="ctrl_sterne" class="radio_sterne">
+			<label id="lbl_sterne_0" for="opt_sterne_0">
+				<svg version="1.1" id="form-stern-1" class="sta-1 no-active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st1{fill:#CDB470;}
+					</style>
+					<polygon class="st1" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</label>
+			<label id="lbl_sterne_1" for="opt_sterne_1">
+				<svg version="1.1" id="form-stern-2" class="sta-1 no-active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st1{fill:#CDB470;}
+					</style>
+					<polygon class="st1" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</label>
+			<label id="lbl_sterne_2" for="opt_sterne_2">
+				<svg version="1.1" id="form-stern-3" class="sta-1 no-active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st1{fill:#CDB470;}
+					</style>
+					<polygon class="st1" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</label>
+			<label id="lbl_sterne_3" for="opt_sterne_3">
+				<svg version="1.1" id="form-stern-4" class="sta-1 no-active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st1{fill:#CDB470;}
+					</style>
+					<polygon class="st1" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</label>
+			<label id="lbl_sterne_4" for="opt_sterne_4">
+				<svg version="1.1" id="form-stern-5" class="sta-1 no-active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 83.2 79.1" style="enable-background:new 0 0 83.2 79.1;" xml:space="preserve">
+					<style type="text/css">
+						.st1{fill:#CDB470;}
+					</style>
+					<polygon class="st1" points="41.6,0 51.4,30.2 83.2,30.2 57.5,48.9 67.3,79.1 41.6,60.5 15.9,79.1 25.7,48.9 0,30.2 31.8,30.2 "/>
+				</svg>
+			</label>
+
+			</fieldset>
+			</div>
+        	<h3>Deine Angaben:</h3>
+        	<?php foreach ($this->fields as $field): ?>
+            	<?= $field->parse() ?>
+     
+        	<?php endforeach; ?>
+        	<div class="widget widget-submit">
+            	<button type="submit" class="submit"><?= $this->submit ?></button>
+        	</div>
+        </div>
+      </form>
+    <?php endif; ?>
+  <?php endif; ?>
+</div>
+<!-- indexer::continue -->
