@@ -13,6 +13,7 @@
         	<input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}">
         	<div class="widget widget-radio">
 			<h3>Deine Gesamtbewertung:</h3>
+                        <?php if($this->errorSterne): ?><p class="error">Bitte Bewerten Sie das Produkt anhand der Sterne!</p><?php endif; ?>
 			<fieldset id="ctrl_sterne" class="radio_sterne">
 			<label id="lbl_sterne_0" for="opt_sterne_0">
 				<svg version="1.1" id="form-stern-1" class="sta-1 no-active" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

@@ -305,8 +305,9 @@ class Comments extends \Frontend
 		$arrWidgets = array();
 		$arrWidgets2 = array();
 		$strFormId = 'com_' . $strSource . '_' . $intParent;
-
+                
 		// Initialize the widgets
+                $isErrorSterne = false;
 		foreach ($arrFields as $arrField)
 		{
 			/** @var Widget $strClass */
@@ -326,12 +327,15 @@ class Comments extends \Frontend
 			// Validate the widget
 			if (\Input::post('FORM_SUBMIT') == $strFormId)
 			{
-				$objWidget->validate();
+                            $objWidget->validate();
 
-				if ($objWidget->hasErrors())
-				{
-					$doNotSubmit = true;
-				}
+                            if ($objWidget->hasErrors())
+                            {
+                                $doNotSubmit = true;
+                                if($arrField['name'] == 'sterne') {
+                                    $isErrorSterne = true;
+                                }
+                            }
 			}
 
 			$arrWidgets[$arrField['name']] = $objWidget;
@@ -342,6 +346,7 @@ class Comments extends \Frontend
 		$objTemplate->messages = ''; // Deprecated since Contao 4.0, to be removed in Contao 5.0
 		$objTemplate->formId = $strFormId;
 		$objTemplate->hasError = $doNotSubmit;
+                $objTemplate->errorSterne = $isErrorSterne;
 
 		// Do not index or cache the page with the confirmation message
 		if ($_SESSION['TL_COMMENT_ADDED'])
