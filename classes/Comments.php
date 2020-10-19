@@ -79,13 +79,14 @@ class Comments extends \Frontend
 		$objTemplate->allowComments = true;
 
 		// Get all published comments
+                $productId = \Contao\Controller::replaceInsertTags('{{product::id}}');
 		if ($limit)
 		{
-			$objComments = \CommentsModel::findPublishedBySourceAndParent($strSource, $intParent, ($objConfig->order == 'descending'), $limit, $offset);
+                    $objComments = \CommentsModel::findPublishedBySourceAndParentAndProductId($strSource, $intParent, $productId, ($objConfig->order == 'descending'), $limit, $offset);
 		}
 		else
 		{
-			$objComments = \CommentsModel::findPublishedBySourceAndParent($strSource, $intParent, ($objConfig->order == 'descending'));
+                    $objComments = \CommentsModel::findPublishedBySourceAndParentAndProductId($strSource, $intParent, $productId, ($objConfig->order == 'descending'));
 		}
 
 		// Parse the comments
@@ -144,7 +145,30 @@ class Comments extends \Frontend
 		$objTemplate->email = $GLOBALS['TL_LANG']['MSC']['com_email'];
 		$objTemplate->website = $GLOBALS['TL_LANG']['MSC']['com_website'];
 		$objTemplate->commentsTotal = $limit ? $gtotal : $total;
-
+                
+                /**
+                 * Frage Durschnittsbewertung für Sterne ab
+                 */
+                $objSterne = $this->Database->prepare('SELECT `sterne` FROM tl_comments WHERE `published`=1 AND `idprodukt`=?')->execute($productId);
+                if($objSterne->numRows > 0)
+                {
+                    $sterne_count_summe = 0;
+                    $i = 0;
+                    while($objSterne->next())
+                    {
+                        $sterne_count_summe += $objSterne->sterne;
+                        $i++;
+                    }
+                    $sterneDurchschnitt = $sterne_count_summe / $i;
+                    $objTemplate->sterneDurchschnitt = number_format($sterneDurchschnitt, 1, ',', ' ');
+                    $objTemplate->bewertungenTotal = $i;
+                }
+                /* keine Bewertungen vorhanden */
+                else {
+                    $objTemplate->sterneDurchschnitt = false;
+                    $objTemplate->bewertungenTotal = 0;
+                }
+                
 		// Add a form to create new comments
 		$this->renderCommentForm($objTemplate, $objConfig, $strSource, $intParent, $varNotifies);
 	}

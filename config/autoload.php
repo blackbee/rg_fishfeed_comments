@@ -21,6 +21,9 @@ ClassLoader::addClasses(array
 (
     // Classes
     'Contao\Comments'                                                       => 'system/modules/zComments/classes/Comments.php',
+    
+    // Models
+    'Contao\CommentsModel'                                                  => 'system/modules/zComments/models/CommentsModel.php',
 ));
 
 /**
