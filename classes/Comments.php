@@ -212,11 +212,12 @@ class Comments extends \Frontend
 		$userCity = $objUser->city;
 
 		$userName = $userfn . " " . $userln{0} . ".";
-		$userName2 = "Angler aus " . $userCity;
+		$userName2 = "Angler/in aus " . $userCity;
 		$userArr = array($userName, $userName2);
 		
 
 		$idpro = $this->replaceInsertTags('{{product::id}}');
+		$produktname = $this->replaceInsertTags('{{product::name}}');
 
 		//-----------------------------------------------ende
 
@@ -267,6 +268,18 @@ class Comments extends \Frontend
 		);
 		//-----------------------------------------------ende
 
+		//-----------------------------------------------start
+		$arrFields['produktname'] = array
+		(
+			'name'      => 'produktname',
+			'label'     => 'Produktname',
+			'inputType' => 'hidden',
+			'value'		=> $produktname,
+			'eval'      => array('maxlength'=>128)
+		);
+		//-----------------------------------------------ende
+
+
 
 		//-----------------------------------------------start
 		$arrFields['sterne'] = array
@@ -304,16 +317,18 @@ class Comments extends \Frontend
 			'eval'      => array('mandatory'=>true, 'rows'=>4, 'cols'=>40, 'preserveTags'=>true)
 		);
 
-		//-----------------------------------------------start
-		$arrFields['nickname'] = array
-		(
-			'name'      => 'nickname',
-			'label'     => $GLOBALS['TL_LANG']['MSC']['com_nickname'],
-			'inputType' => 'radio',
-			'options'   => $userArr,
-			'eval'      => array('mandatory'=>true)
-		);
-
+		if (FE_USER_LOGGED_IN) 
+		{
+			//-----------------------------------------------start
+			$arrFields['nickname'] = array
+			(
+				'name'      => 'nickname',
+				'label'     => $GLOBALS['TL_LANG']['MSC']['com_nickname'],
+				'inputType' => 'radio',
+				'options'   => $userArr,
+				'eval'      => array()
+			);
+		}
 		//-----------------------------------------------ende
 
 		// Notify me of new comments
@@ -417,27 +432,54 @@ class Comments extends \Frontend
 			$time = time();
 
 			// Prepare the record
+			if (FE_USER_LOGGED_IN) 
+			{
 			$arrSet = array
-			(
-				'tstamp'    => $time,
-				'source'    => $strSource,
-				'parent'    => $intParent,
-				'name'      => $arrWidgets['name']->value,
+				(
+					'tstamp'    => $time,
+					'source'    => $strSource,
+					'parent'    => $intParent,
+					'name'      => $arrWidgets['name']->value,
 
-				//-----------------------------------------------start
-				'sterne'    => $arrWidgets['sterne']->value,
-				'idprodukt' => $arrWidgets['idprodukt']->value,
-				'headline'	=> $arrWidgets['headline']->value,
-				'nickname'	=> $arrWidgets['nickname']->value,
+					//-----------------------------------------------start
+					'sterne'    => $arrWidgets['sterne']->value,
+					'idprodukt' => $arrWidgets['idprodukt']->value,
+					'produktname' => $arrWidgets['produktname']->value,
+					'headline'	=> $arrWidgets['headline']->value,
+					'nickname'	=> $arrWidgets['nickname']->value,
 
-				//-----------------------------------------------ende
-				'email'     => $arrWidgets['email']->value,
-				'website'   => $strWebsite,
-				'comment'   => $this->convertLineFeeds($strComment),
-				'ip'        => $this->anonymizeIp(\Environment::get('ip')),
-				'date'      => $time,
-				'published' => ($objConfig->moderate ? '' : 1)
+					//-----------------------------------------------ende
+					'email'     => $arrWidgets['email']->value,
+					'website'   => $strWebsite,
+					'comment'   => $this->convertLineFeeds($strComment),
+					'ip'        => $this->anonymizeIp(\Environment::get('ip')),
+					'date'      => $time,
+					'published' => ($objConfig->moderate ? '' : 1)
 			);
+			} 
+			else {
+			$arrSet = array
+				(
+					'tstamp'    => $time,
+					'source'    => $strSource,
+					'parent'    => $intParent,
+					'name'      => $arrWidgets['name']->value,
+
+					//-----------------------------------------------start
+					'sterne'    => $arrWidgets['sterne']->value,
+					'idprodukt' => $arrWidgets['idprodukt']->value,
+					'headline'	=> $arrWidgets['headline']->value,
+					'produktname' => $arrWidgets['produktname']->value,
+
+					//-----------------------------------------------ende
+					'email'     => $arrWidgets['email']->value,
+					'website'   => $strWebsite,
+					'comment'   => $this->convertLineFeeds($strComment),
+					'ip'        => $this->anonymizeIp(\Environment::get('ip')),
+					'date'      => $time,
+					'published' => ($objConfig->moderate ? '' : 1)
+			);
+			}
 
 			// Store the comment
 			$objComment = new \CommentsModel();
