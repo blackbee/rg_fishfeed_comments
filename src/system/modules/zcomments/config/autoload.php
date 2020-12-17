@@ -14,6 +14,13 @@
  * @date      202010160000
  */
 
+if (class_exists('NamespaceClassLoader')) {
+    /**
+     * Register PSR-0 namespace
+     */
+    NamespaceClassLoader::add('IsotopeComments', 'system/modules/zComments/library');
+}
+
 /**
  * Register the classes
  */
@@ -35,4 +42,5 @@ TemplateLoader::addFiles(array
     'ce_comments.html5'                                                     => 'system/modules/zComments/templates/elements',
     'mod_comment_form.html5'                                                => 'system/modules/zComments/templates/modules',
     'mod_comments.html5'                                                    => 'system/modules/zComments/templates/modules',
+    'iso_collection_rateReminder'                                           => 'system/modules/zComments/templates/collection',
 ));
