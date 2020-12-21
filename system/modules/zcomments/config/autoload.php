@@ -14,23 +14,19 @@
  * @date      202010160000
  */
 
-if (class_exists('NamespaceClassLoader')) {
-    /**
-     * Register PSR-0 namespace
-     */
-    NamespaceClassLoader::add('IsotopeComments', 'system/modules/zComments/library');
-}
-
 /**
  * Register the classes
  */
 ClassLoader::addClasses(array
 (
     // Classes
-    'Contao\Comments'                                                       => 'system/modules/zComments/classes/Comments.php',
+    'Contao\Comments'                                                       => 'system/modules/zcomments/classes/Comments.php',
     
     // Models
-    'Contao\CommentsModel'                                                  => 'system/modules/zComments/models/CommentsModel.php',
+    'Contao\CommentsModel'                                                  => 'system/modules/zcomments/models/CommentsModel.php',
+    
+    // Hooks
+    'IsotopeComments\Hooks'                                                 => 'system/modules/zcomments/library/IsotopeComments/Hooks.php',
 ));
 
 /**
@@ -38,9 +34,9 @@ ClassLoader::addClasses(array
  */
 TemplateLoader::addFiles(array
 (
-    'com_default.html5'                                                     => 'system/modules/zComments/templates/comments',
-    'ce_comments.html5'                                                     => 'system/modules/zComments/templates/elements',
-    'mod_comment_form.html5'                                                => 'system/modules/zComments/templates/modules',
-    'mod_comments.html5'                                                    => 'system/modules/zComments/templates/modules',
-    'iso_collection_rateReminder'                                           => 'system/modules/zComments/templates/collection',
+    'com_default.html5'                                                     => 'system/modules/zcomments/templates/comments',
+    'ce_comments.html5'                                                     => 'system/modules/zcomments/templates/elements',
+    'mod_comment_form.html5'                                                => 'system/modules/zcomments/templates/modules',
+    'mod_comments.html5'                                                    => 'system/modules/zcomments/templates/modules',
+    'iso_collection_rateReminder'                                           => 'system/modules/zcomments/templates/collection',
 ));

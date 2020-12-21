@@ -10,12 +10,14 @@ use Isotope\Isotope;
 use Isotope\Model\Address;
 use Isotope\Model\Document;
 use Isotope\Model\OrderStatus;
+use Isotope\Model\Product;
 use Isotope\Model\ProductCollection;
+use Isotope\Template;
 
 /**
  * Class Hooks
  */
-class Hooks extends Isotope\Model\ProductCollection  implements Isotope\Interfaces\IsotopePurchasableCollection
+class Hooks extends \Contao\Frontend
 {   
     /**
      * __construct()
@@ -34,22 +36,51 @@ class Hooks extends Isotope\Model\ProductCollection  implements Isotope\Interfac
      * @param array $arrTokens
      * @return array
      */
-    public function getOrderNotificationTokens($this, $arrTokens) : array
+    public function getOrderNotificationTokens($objOrder, $arrTokens) : array
     {
-        if($GLOBALS['TL_CONFIG']['rateReminder'] == 1 && $this->order_status == $GLOBALS['TL_CONFIG']['rateReminderState'])
+        if(\Contao\Config::get('rateReminder') == 1 && $objOrder->isReminderState === true)
         {
             /** @var Template|object $objTemplate */
-            $objTemplate                 = new Template('iso_collection_rateReminder');
-            $this->addToTemplate(
-                $objTemplate
-            );
+            $objTemplate = new \FrontendTemplate('iso_collection_rateReminder');
+            
+            $arrItems = [];
+            foreach($objOrder->getItems() AS $objItem)
+            {
+                $strUrl = '';
+                if (($jumpTo = \Contao\PageModel::findByPk($objItem->jumpTo)) !== null) {
+                    $objProduct = \Isotope\Model\Product::findBy('id', $objItem->product_id);
+                    $strUrl = $objProduct->generateUrl($jumpTo);
+                };
+                $arrItems[] = ['name' => $objItem->name, 'href' => $strUrl];
+            }
+            $objTemplate->items = $arrItems;
 
-            $objTemplate->isNotification = true;
-            $arrTokens['cart_html'] = \Controller::replaceInsertTags($objTemplate->parse(), false);
-            $objTemplate->textOnly  = true;
-            $arrTokens['cart_text'] = strip_tags(\Controller::replaceInsertTags($objTemplate->parse(), true));
+            $arrTokens['cart_html'] = \Contao\Controller::replaceInsertTags($objTemplate->parse(), false);
+            $arrTokens['cart_text'] = strip_tags(\Contao\Controller::replaceInsertTags($objTemplate->parse(), true));
         }
                 
         return $arrTokens;
+    }
+    
+    
+    /**
+     * Hook - preOrderStatusUpdate
+     * 
+     * Wird verwendet um ein neues Attribut isReminderState zu hinterlegen, welches vom nächsten Hook wieder ausgelesen wird.
+     * 
+     * @param type $objOrder
+     * @param type $objNewStatus
+     * @return bool
+     */
+    public function preOrderStatusUpdate($objOrder, $objNewStatus) : bool
+    {
+        if($objNewStatus->id == \Contao\Config::get('rateReminderState'))
+        {
+            $objOrder->isReminderState = true;
+        } else {
+            $objOrder->isReminderState = false;
+        }
+        
+        return false;
     }
 }
